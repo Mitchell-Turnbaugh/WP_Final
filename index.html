@@ -10,35 +10,42 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body lang = "en-us">
         <h1>The Lottery Lottery</h1>
-        <div>
-            <h2>The Lottery Lottery scratch-off</h2>
-            <h3>Reveal the word "Winner" to win the amount under it</h3>
-            <div id = "game">
-                <div class = "row">
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                </div>
-                <div class = "row">
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                </div>
-                <div class = "row">
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                </div>
-                <div class = "row">
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
-                    <div class = "square"></div>
+        <div id = "content">
+            <div id = "amounts">
+                <h2>Amount Won This Round: $0</h2>
+                <h2>Total Amount Won: $0</h2>
+            </div>
+            <div id = "ticket">
+                <h3>$2</h3>
+                <h4>The Lottery Lottery Scratch-Off</h4>
+                <h5>Reveal the word "Winner" to win the amount under it</h5>
+                <div id = "game">
+                    <div class = "row">
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                    </div>
+                    <div class = "row">
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                    </div>
+                    <div class = "row">
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                    </div>
+                    <div class = "row">
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                        <div class = "square" onclick = "scratch(this)"></div>
+                    </div>
                 </div>
             </div>
         </div>
