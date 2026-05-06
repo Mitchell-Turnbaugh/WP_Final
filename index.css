@@ -14,6 +14,7 @@ h1{
 }
 h2{
     margin: 1ch;
+    overflow-wrap: anywhere;
 }
 #amounts{
     display: flex;
@@ -31,6 +32,7 @@ h2{
 h3{
     margin: 0;
     text-align: left;
+    width: 100%;
 }
 h4{
     margin-top: 0;
@@ -62,9 +64,18 @@ h5{
     width: 5vw;
     min-width: 7ch;
     aspect-ratio: 1;
-    border: solid
+    border: solid;
+    user-select: none;
 }
 h6{
     margin: 1ch;
     font-size: larger;
+}
+p{
+    margin: 0px;
+}
+button{
+    margin: 1vh;
+    font-size: 3em;
+    background-color: yellow;
 }
