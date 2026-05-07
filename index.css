@@ -12,14 +12,20 @@ h1{
 #content{
     display: flex;
 }
-h2{
-    margin: 1ch;
-    overflow-wrap: anywhere;
+#winnings,#total,#amountSpent{
+    color: #1a652a;
+}
+#netResults{
+    color: red;
 }
 #amounts{
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+h2{
+    margin: 1ch;
+    overflow-wrap: anywhere;
 }
 #ticket{
     display: flex;
@@ -60,21 +66,27 @@ h5{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: cyan;
     width: 5vw;
     min-width: 7ch;
     aspect-ratio: 1;
     border: solid;
     user-select: none;
+    cursor: pointer;
 }
 h6{
     margin: 1ch;
     font-size: larger;
 }
-p{
+.squareWinnings{
     margin: 0px;
+    color: #1a652a;
+}
+#message{
+    font-size: 1.15em;
 }
 button{
+    cursor: pointer;
     margin: 1vh;
     font-size: 3em;
     background-color: yellow;

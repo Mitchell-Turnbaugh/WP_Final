@@ -14,13 +14,15 @@
         <h1>The Lottery Lottery</h1>
         <div id = "content">
             <div id = "amounts">
-                <h2 id = "winnings">Amount Won This Round: $0</h2>
-                <h2 id = "total">Total Amount Won: $0</h2>
+                <h2>Amount won this round: <span id = "winnings">$0</span></h2>
+                <h2>Total amount won: <span id = "total">$0</span></h2>
+                <h2>Amount spent on tickets: <span id = "amountSpent">$2</span></h2>
+                <h2>Net results: <span id = "netResults">-$2</span></h2>
             </div>
             <div id = "ticket">
                 <h3>$2</h3>
                 <h4>The Lottery Lottery Scratch-Off</h4>
-                <h5>Reveal the word "Winner" to win the amount under it</h5>
+                <h5>Reveal the word "Winner" to win the amount under it.</h5>
                 <div id = "game">
                     <div class = "row">
                         <div class = "square" onclick = "scratch(this)"></div>
@@ -49,6 +51,7 @@
                 </div>
             </div>
         </div>
+        <p id = "message">Your ticket still has unscratched squares.</p>
         <button onclick = "getNewCard()">Get a new card</button>
         <script src = "index.js"></script>
     </body>
