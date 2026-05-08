@@ -1,11 +1,15 @@
 let squaresRevealed = 0;
+const words = [
+    "Winner","Not a winner","Loser", "Try again","Maybe next time",
+    "<img id = 'tryAgainImg' src = 'resources/index/try_again.jpg'>"
+];
 function sleep(time){
     return new Promise((resolve) => setTimeout(resolve,time));
 }
 async function scratch(square){
     if(square.innerHTML === ""){
-        squaresRevealed += 1
-        square.innerHTML = square.id
+        squaresRevealed += 1;
+        square.innerHTML = square.id;
             if(square.firstChild.textContent === "Winner"){
                 const winnings = document.getElementById("winnings");
                 const total = document.getElementById("total");
@@ -33,29 +37,34 @@ async function scratch(square){
         }
 }
 function getNewCard(){
+    squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
+    const cardNumber = document.getElementById("cardNumber");
+    cardNumber.textContent = String(Number(cardNumber.textContent) + 1).padStart(3,0)
     const netResult = document.getElementById("netResults");
-    console.log(netResult.textContent.replace("$",""))
-    if(netResult.textContent.replace("$","") < 0){
+    if(netResult.textContent.replace("$","") <= 0){
         netResult.style.color = "red";
-        netResult.textContent = `-$${Math.abs(Number(netResult.textContent.split("$")[1]) + 2)}`;
+        netResult.textContent = `-$${Number(netResult.textContent.split("$")[1]) + 2}`;
     }else{
-        let current = netResult.textContent("$")[1] - 2
-        if(current > 0){
-            netResult.textContent = `$${netResult.textContent.split("$")[1] - 2}`;
+        let current = netResult.textContent.split("$")[1] - 2;
+        if(current >= 0){
+            netResult.textContent = `$${current}`;
             netResult.style.color = "#1a652a";
         }else{
-            console.log(netResult.textContent)
+            netResult.textContent = `-$${Number(netResult.textContent.split("$")[1])}`;
+            netResult.style.color = "red";
         }
     }
     const message = document.getElementById("message");
-    message.textContent = "Your ticket still has unscratched squares."
+    message.textContent = "Your ticket still has unscratched squares.";
+    if(netResults.style.color === "red"){
+        message.textContent += " Your still in the red";
+    }
     for(square of squares){
         square.innerHTML = "";
-        words = ["Winner","Loser"];
-        square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(2,1)}</p>`;
+        square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
     }
 }
 function randint(max,startAt = 0){
@@ -66,6 +75,5 @@ function choice(data){
 }
 const squares = document.getElementsByClassName("square");
 for(square of squares){
-    words = ["Winner","Loser"];
     square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(2,1)}</p>`;
 }
