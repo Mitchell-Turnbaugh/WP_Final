@@ -62,7 +62,7 @@ function getNewCard(){
     for(square of squares){
         square.innerHTML = "";
         square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
-        square.onclick = "scratch(this)"
+        square.onclick = function(){"scratch(this)"};
     }
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
