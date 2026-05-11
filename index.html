@@ -17,7 +17,7 @@
                 <h2>Amount won this round: <span id = "winnings">$0</span></h2>
                 <h2>Total amount won: <span id = "total">$0</span></h2>
                 <h2>Amount spent on tickets: <span id = "amountSpent">$2</span></h2>
-                <h2>Net results: <span id = "netResults">-$2</span></h2>
+                <h2>Net result: <span id = "netResult">-$2</span></h2>
             </div>
             <div id = "ticket">
                 <h3>$2</h3>
@@ -53,12 +53,12 @@
                     <p id = "cardNumber">000</p>
                     <div id = "qrCodeDiv">
                         <p id = qrCodeNote>Note: this QR code is just for show and does not tell you if you won.</p>
-                        <img id = qrCode src = "resources/index/qr-code.png">
+                        <div id = qrCode onclick = "revealQrCode(this)"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <p id = "message">Your ticket still has unscratched squares.</p>
+        <p id = "message">Your ticket still has 16 unscratched squares.</p>
         <button onclick = "getNewCard()">Get a new card</button>
         <script src = "index.js"></script>
     </body>

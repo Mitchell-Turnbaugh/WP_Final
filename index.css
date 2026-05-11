@@ -12,10 +12,10 @@ h1{
 #content{
     display: flex;
 }
-#winnings,#total,#amountSpent{
+#winnings, #total, #amountSpent, .green{
     color: #1a652a;
 }
-#netResults{
+#netResult{
     color: red;
 }
 #amounts{
@@ -42,9 +42,11 @@ h3{
 }
 h4{
     margin-top: 0;
+    font-size: 1.5em;
 }
 h5{
     margin: 1%;
+    font-size: 1.2em;
 }
 #game{
     display: flex;
@@ -70,8 +72,8 @@ h5{
     background-color: cyan;
     width: 5vw;
     aspect-ratio: 1;
-    min-width: max(7ch,14ex);
-    min-height: 14ex;
+    min-width: max(7ch,16ex);
+    min-height: 16ex;
     border: solid;
     user-select: none;
     cursor: pointer;
@@ -111,8 +113,11 @@ h6{
 }
 #qrCode{
     width: 5vw;
-    height: auto;
-    margin-bottom: -6px;
+    height: 5vw;
+    background-color: cyan;
+}
+img{
+    max-width: 100%;
 }
 #message{
     font-size: 1.15em;
