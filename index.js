@@ -65,7 +65,7 @@ function getNewCard(){
         square.onclick = function(){"scratch(this)"};
         square.addEventListener('click', function(event) {
             scratch(event.target);
-        });
+        },{ once: true });
     }
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
