@@ -37,17 +37,17 @@ async function scratch(square){
             span = document.createElement("span");
             if(netResult.textContent.replace("$","") - 2 >= 0){
                 span.style.color = "rgb(26, 101, 42)";
-                span.textContent = `$${netResult.textContent.replace("$","") - 2}`;
+                span.textContent = `$${netResult.textContent.replace("$","") - 2}.`;
                 message.appendChild(span);
             }else{
-                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>`;
+                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>`.;
             }
         }else{
             message.innerHTML = `You didn't win anything, you have a total of <span class = "green">${total.textContent}</span>, you have a net result of `;
             if(netResult.textContent.replace("$","") - 2 >= 0){
-                message.innerHTML += `<span style = "color: rgb(26, 101, 42);"">$${netResult.textContent.replace("$","") - 2}</span> try again`;
+                message.innerHTML += `<span style = "color: rgb(26, 101, 42);"">$${netResult.textContent.replace("$","") - 2}</span> try again.`;
             }else{
-                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>`
+                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>.`;
             }
         }
         await sleep(2000);
