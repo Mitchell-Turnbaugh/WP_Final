@@ -8,27 +8,26 @@ function sleep(time){
 }
 async function scratch(square){
     const message = document.getElementById("message");
-    if(square.innerHTML === ""){
-        squaresRevealed += 1;
-        message.textContent = `Your ticket still has ${16 - squaresRevealed} unscratched squares`
-        square.innerHTML = square.id;
-            if(square.firstChild.textContent === "Winner"){
-                const winnings = document.getElementById("winnings");
-                const total = document.getElementById("total");
-                const netResult = document.getElementById("netResult");
-                winnings.textContent = `$${Number(winnings.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
-                total.textContent = `$${Number(total.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
-                if(netResult.textContent.startsWith("-")){
-                    let current = netResult.textContent.split("$")[1] - square.children[1].textContent.replace("$","");
-                    if(current > 0){
-                        netResult.textContent = `-$${current}`;
-                    }else{
-                        netResult.textContent = `$${Math.abs(current)}`;
-                        netResult.style.color = "#1a652a";
-                    }
+    square.onclick = "";
+    squaresRevealed += 1;
+    message.textContent = `Your ticket still has ${16 - squaresRevealed} unscratched squares`
+    square.innerHTML = square.id;
+        if(square.firstChild.textContent === "Winner"){
+            const winnings = document.getElementById("winnings");
+            const total = document.getElementById("total");
+            const netResult = document.getElementById("netResult");
+            winnings.textContent = `$${Number(winnings.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
+            total.textContent = `$${Number(total.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
+            if(netResult.textContent.startsWith("-")){
+                let current = netResult.textContent.split("$")[1] - square.children[1].textContent.replace("$","");
+                if(current > 0){
+                    netResult.textContent = `-$${current}`;
                 }else{
-                    netResult.textContent = `$${Number(netResult.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
+                    netResult.textContent = `$${Math.abs(current)}`;
+                    netResult.style.color = "#1a652a";
                 }
+            }else{
+                netResult.textContent = `$${Number(netResult.textContent.split("$")[1]) + Number(square.children[1].textContent.replace("$",""))}`;
             }
         }
     if(squaresRevealed === 16){
@@ -63,6 +62,7 @@ function getNewCard(){
     for(square of squares){
         square.innerHTML = "";
         square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
+        square.onclick = "scratch(this)"
     }
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
