@@ -60,6 +60,10 @@ function revealQrCode(div){
 function getNewCard(){
     squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
+    for(square of squares){
+        square.innerHTML = "";
+        square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
+    }
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
     const cardNumber = document.getElementById("cardNumber");
@@ -80,13 +84,6 @@ function getNewCard(){
     }
     const message = document.getElementById("message");
     message.textContent = "Your ticket still has 16 unscratched squares.";
-    if(netResult.style.color === "red"){
-        message.textContent += " You're still in the red";
-    }
-    for(square of squares){
-        square.innerHTML = "";
-        square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
-    }
 }
 function randint(max,startAt = 0){
     return Math.floor(Math.random() * max) + startAt;
