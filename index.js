@@ -40,7 +40,7 @@ async function scratch(square){
                 span.textContent = `$${netResult.textContent.replace("$","") - 2}.`;
                 message.appendChild(span);
             }else{
-                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>`.;
+                message.innerHTML += `<span style = "color: red;">-$${Math.abs(netResult.textContent.replace("$","") - 2)}</span>.`;
             }
         }else{
             message.innerHTML = `You didn't win anything, you have a total of <span class = "green">${total.textContent}</span>, you have a net result of `;
