@@ -63,6 +63,9 @@ function getNewCard(){
         square.innerHTML = "";
         square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${randint(3,1)}</p>`;
         square.onclick = function(){"scratch(this)"};
+        square.addEventListener('click', function(event) {
+            scratch(event.target);
+        });
     }
     const winnings = document.getElementById("winnings");
     winnings.textContent = "$0";
