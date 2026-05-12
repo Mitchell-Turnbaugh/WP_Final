@@ -7,7 +7,7 @@ const words = [
     "No chicken dinner"
 ];
 
-const randomAmounts = [[1,100], [2,50], [5,40], [10,20], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
+const randomAmounts = [[1,100], [2,50], [5,40], [10,20], [20,15], [25,10], [50,5], [100,4], [200,3], [250,2] [500,1]];
 
 function sleep(time){
     return new Promise((resolve) => setTimeout(resolve,time));
@@ -78,7 +78,7 @@ function revealQrCode(div){
 function getNewCard(){
     squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
-
+    document.getElementbyId("qrCode").innerHTML = "";
     for(square of squares){
         square.innerHTML = "";
         square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${weightedChoice(randomAmounts)}</p>`;
