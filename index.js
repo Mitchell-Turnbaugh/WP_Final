@@ -78,7 +78,7 @@ function revealQrCode(div){
 function getNewCard(){
     squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
-    const qrCode = document.getElementbyId("qrCode");
+    //const qrCode = document.getElementbyId("qrCode");
     //qrCode.innerHTML = "";
     
     for(square of squares){
