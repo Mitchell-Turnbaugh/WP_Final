@@ -78,7 +78,7 @@ function revealQrCode(div){
 function getNewCard(){
     squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
-    document.getElementbyId("qrCode").innerHTML = "";
+    //document.getElementbyId("qrCode").innerHTML = "";
     for(square of squares){
         square.innerHTML = "";
         square.id = `<h6>${choice(words)}</h6><p class = "squareWinnings">$${weightedChoice(randomAmounts)}</p>`;
