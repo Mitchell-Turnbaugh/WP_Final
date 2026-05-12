@@ -3,10 +3,11 @@ let squaresRevealed = 0;
 const words = [
     "Winner", "Not a winner", "Loser", "Try again", "Maybe next time", "Next time's the charm", "Losing square", "Not a winning square", "A losing square",
     "<img id = 'tryAgainImg' src = 'resources/index/try_again.jpg' alt = 'Spongbob try again meme'>", "MMM try again", "Sorry not this one", "Sorry maybe next time", 
-    "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square", "A loser", "A square that did not win"
+    "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square", "A loser", "A square that did not win",
+    "No chicken dinner"
 ];
 
-const randomAmounts = [[1,100], [2,50], [5,30], [10,20], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
+const randomAmounts = [[1,100], [2,50], [5,40], [10,20], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
 
 function sleep(time){
     return new Promise((resolve) => setTimeout(resolve,time));
