@@ -6,7 +6,7 @@ const words = [
     "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square", "A loser", "A square that did not win"
 ];
 
-const randomAmounts = [[1,75], [2,35], [5,20], [10,15], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
+const randomAmounts = [[1,100], [2,50], [5,30], [10,20], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
 
 function sleep(time){
     return new Promise((resolve) => setTimeout(resolve,time));
