@@ -3,7 +3,7 @@ let squaresRevealed = 0;
 const words = [
     "Winner", "Not a winner", "Loser", "Try again", "Maybe next time", "Next time's the charm", "Losing square", "Not a winning square", "A losing square",
     "<img id = 'tryAgainImg' src = 'resources/index/try_again.jpg' alt = 'Spongbob try again meme'>", "MMM try again", "Sorry not this one", "Sorry maybe next time", 
-    "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square"
+    "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square", "A loser", "A square that did not win"
 ];
 
 const randomAmounts = [[1,75], [2,35], [5,20], [10,15], [20,10], [25,5], [50,3], [100,3], [200,2], [500,1]];
