@@ -79,7 +79,7 @@ function getNewCard(){
     squaresRevealed = 0;
     const squares = document.getElementsByClassName("square");
     const qrCode = document.getElementbyId("qrCode");
-    qrCode.innerHTML = "";
+    //qrCode.innerHTML = "";
     
     for(square of squares){
         square.innerHTML = "";
