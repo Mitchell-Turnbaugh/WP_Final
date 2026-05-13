@@ -4,10 +4,15 @@ const words = [
     "Winner", "Not a winner", "Loser", "Try again", "Maybe next time", "Next time's the charm", "Losing square", "Not a winning square", "A losing square",
     "<img id = 'tryAgainImg' src = 'resources/index/try_again.jpg' alt = 'Spongbob try again meme'>", "MMM try again", "Sorry not this one", "Sorry maybe next time", 
     "Not this time", "Next time maybe", "Don't give up!", "Keep going", "A non-winning square", "No dice", "A winless square", "A loser", "A square that did not win",
-    "No chicken dinner"
+    "No chicken dinner", "You are a loser", "You are not a winner", "Not this time", "Maybe one time you'll win", 
+    "<span style = 'font-size: 0.9em'>Maybe next time you'll get money</span>", "Don't stop try again", 
+    "<span style = 'font-size: 0.65em;'>Sorry maybe next time or the time after that</span>", "<span style = 'font-size: 0.9em;'>Maybe next time you'll win money</span>",
+    "<span style ='font-size: 0.45em;' >Sorry maybe next time or the time after that or the time after that...</span>"
 ];
 
-const randomAmounts = [[1,100], [2,50], [5,40], [10,20], [20,15], [25,10], [50,5], [100,4], [200,3], [250,2] [500,1]];
+const randomAmounts = [
+    [1,2000], [2,1500], [5,1250], [10,500], [20,200], [25,100], [50,50], [75,25], [100,20], [200,10], [250,5], [500,4], [750,2],[1000,1]
+];
 
 function sleep(time){
     return new Promise((resolve) => setTimeout(resolve,time));
@@ -19,29 +24,9 @@ async function scratch(square){
     squaresRevealed += 1;
     message.textContent = `Your ticket still has ${16 - squaresRevealed} unscratched squares`;
     square.innerHTML = square.id;
-        if(square.firstChild.textContent === "Winner"){
-            const winnings = document.getElementById("winnings");
-            const total = document.getElementById("total");
-            const netResult = document.getElementById("netResult");
-            const amountWon = Number(square.children[1].textContent.replace("$",""));
-            winnings.textContent = `$${Number(winnings.textContent.split("$")[1]) + amountWon}`;
-            total.textContent = `$${Number(total.textContent.split("$")[1]) + amountWon}`;
-
-            if(netResult.textContent.startsWith("-")){
-
-                const current = netResult.textContent.split("$")[1] - amountWon;
-                if(current > 0){
-                    netResult.textContent = `-$${current}`;
-                }else{
-                    netResult.textContent = `$${Math.abs(current)}`;
-                    netResult.style.color = "#1a652a";
-                }
-
-            }else{
-                netResult.textContent = `$${Number(netResult.textContent.split("$")[1]) + amountWon}`;
-            }
-
-        }
+    if(square.firstChild.textContent === "Winner"){
+        winningSquare(square)
+    }
     if(squaresRevealed === 16){
 
         if(Number(winnings.textContent.split("$")[1]) > 0){
@@ -58,7 +43,7 @@ async function scratch(square){
 
         }else{
 
-            message.innerHTML = `You didn't win anything, you have a total of <span class = "green">${total.textContent}</span>, you have a net result of `;
+            message.innerHTML = `You didn't win anything, you have won a total of <span class = "green">${total.textContent}</span>, you have a net result of `;
             if(netResult.textContent.replace("$","") - 2 >= 0){
                 message.innerHTML += `<span style = "class = "green">$${netResult.textContent.replace("$","") - 2}</span> try again.`;
             }else{
@@ -70,6 +55,31 @@ async function scratch(square){
         getNewCard();
     }
 }
+
+function winningSquare(square){
+    const winnings = document.getElementById("winnings");
+    const total = document.getElementById("total");
+    const netResult = document.getElementById("netResult");
+    const amountWon = Number(square.children[1].textContent.replace("$",""));
+    winnings.textContent = `$${Number(winnings.textContent.split("$")[1]) + amountWon}`;
+    total.textContent = `$${Number(total.textContent.split("$")[1]) + amountWon}`;
+
+    if(netResult.textContent.startsWith("-")){
+
+        const current = netResult.textContent.split("$")[1] - amountWon;
+        if(current > 0){
+            netResult.textContent = `-$${current}`;
+        }else{
+            netResult.textContent = `$${Math.abs(current)}`;
+            netResult.style.color = "#1a652a";
+        }
+
+    }else{
+        netResult.textContent = `$${Number(netResult.textContent.split("$")[1]) + amountWon}`;
+    }
+
+    }
+
 
 function revealQrCode(div){
     div.innerHTML = "<img src = 'resources/index/qr_code.png' alt = 'QR code'>";
@@ -131,6 +141,7 @@ function weightedChoice(data){
             newData.push(element[0]);
         }
     }
+
     return choice(newData);
 }
 
